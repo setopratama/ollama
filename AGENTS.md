@@ -58,7 +58,9 @@ Berikut adalah daftar model yang saat ini terpasang di dalam container Ollama (`
 | **`gemma3:1b`** | 815 MB | ~1.2 GB | Sangat ringan, cepat, ideal untuk respons instan pada perangkat berspesifikasi rendah. |
 | **`qwen2.5:3b`** | 1.9 GB | ~2.5 GB | Menawarkan keseimbangan yang baik antara ukuran dan akurasi, sangat optimal untuk tugas umum & bahasa Indonesia. |
 | **`llama2:latest`** | 3.8 GB | ~4.5 GB | Model 7B klasik dari Meta untuk pemahaman teks umum. |
+| **`qwen2.5vl:3b`** | 3.2 GB | ~4.0 GB | Model Vision-Language 3B parameter, handal untuk OCR dan pemahaman gambar. |
 | **`qwen2.5:latest`** | 4.7 GB | ~5.5 GB | Model 7B modern dengan performa tinggi pada tugas penalaran, koding, dan multibahasa. |
+
 
 ---
 
