@@ -1,0 +1,2 @@
+# Ignore model files and VRAM persistence data
+ollama-data/
