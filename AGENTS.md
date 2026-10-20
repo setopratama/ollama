@@ -28,7 +28,7 @@ flowchart TD
 ```
 
 ### Rincian Konfigurasi Container:
-* **File Konfigurasi:** [docker-compose.yml](file:///home/nusa/Project/ollama/docker-compose.yml)
+* **File Konfigurasi:** [docker-compose.yml](docker-compose.yml)
 * **Image:** `ollama/ollama:latest`
 * **Nama Container:** `ollama_server`
 * **Port Mapping:** `11434:11434`
@@ -86,7 +86,7 @@ Pengujian inferensi dilakukan menggunakan model **`gemma3:1b`** (Q4_K_M quantiza
 
 ## 5. Panduan Operasional & Pemeliharaan
 
-Gunakan perintah-perintah berikut di direktori `/home/nusa/Project/ollama` untuk mengelola layanan:
+Gunakan perintah-perintah berikut di direktori proyek (*root directory*) untuk mengelola layanan:
 
 ### Memulai & Menghentikan Layanan
 ```bash
@@ -108,8 +108,8 @@ docker compose exec ollama ollama list
 # Mengunduh model baru (contoh: deepseek-coder)
 docker compose exec ollama ollama pull deepseek-coder
 
-# Berinteraksi langsung dengan model via terminal
-docker compose exec ollama ollama run gemma3:1b
+# Berinteraksi langsung dengan model via terminal (mode interaktif)
+docker compose exec -it ollama ollama run gemma3:1b
 ```
 
 ### Monitoring & Debugging

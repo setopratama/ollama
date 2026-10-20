@@ -29,14 +29,42 @@ Nyalakan layanan Ollama di latar belakang (*background*):
 docker compose up -d
 ```
 
-### 2. Kelola Model AI
-Untuk mengunduh dan menjalankan model AI (contoh: `gemma3:1b`):
-```bash
-# Mengunduh model
-docker compose exec ollama ollama pull gemma3:1b
+### 2. Kelola & Jalankan Model AI
 
-# Berinteraksi via terminal
-docker compose exec ollama ollama run gemma3:1b
+#### A. Mengunduh Model Baru
+```bash
+docker compose exec ollama ollama pull gemma3:1b
+```
+
+#### B. Sesi Chat Interaktif di Terminal
+Gunakan flag `-it` agar terminal mengalokasikan sesi interaktif (TTY):
+```bash
+# Chat dengan Gemma 3 (1B - ringan & respons instan)
+docker compose exec -it ollama ollama run gemma3:1b
+
+# Chat dengan Qwen 2.5 (3B - optimal untuk tugas umum & multibahasa)
+docker compose exec -it ollama ollama run qwen2.5:3b
+
+# Chat dengan Mistral (7B - penalaran & instruksi kompleks)
+docker compose exec -it ollama ollama run mistral:7b
+```
+
+> [!TIP]
+> **Cara Keluar dari Chat:** Ketik `/bye` lalu tekan **Enter**, atau tekan pintasan **`Ctrl + D`**.
+
+#### C. Prompt Sekali Jalan (Single Query)
+Jika ingin mengirim prompt dan langsung menerima output tanpa masuk ke sesi interaktif:
+```bash
+docker compose exec ollama ollama run gemma3:1b "Jelaskan apa itu Docker secara singkat!"
+```
+
+#### D. Perintah Bermanfaat Lainnya
+```bash
+# Melihat daftar model yang terpasang
+docker compose exec ollama ollama list
+
+# Melihat model yang sedang aktif di VRAM GPU
+docker compose exec ollama ollama ps
 ```
 
 ### 3. Tes Endpoint API
